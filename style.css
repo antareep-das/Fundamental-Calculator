@@ -1,60 +1,123 @@
-*
-{
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+* {
     margin: 0;
     padding: 0;
+    font-family: 'Barlow', sans-serif;
 }
-h1
-{
+:root {
+    --dark-shadow : rgba(0, 0, 0, 0.1);
+    --light-shadow : #fffb;
+    --light-back : #edf1f4;
+    --dark-back : #282c2f;
+}
+body {
+    transition: 0.5s;
+    background-color: var(--light-back);
+}
+h1 {
     text-align: center;
     margin-top: 50px;
-    font-family: cursive;
     font-size: 40px;
     margin-bottom: 30px;
     color: maroon;
 }
-.main_child
-{
+.main_child {
     margin: 0 auto;     /* The whole box comes at center of page */
-    text-align: center;     /* Inside elements comes at center of box */
-    max-width: 350px;
-    margin-top: 10px;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    padding-bottom: 1px;
     transition: 0.3s;
-    font-size: 0;   /*for making the margins 0 of the buttons */
+    font-size: 0;   /* for making the margins 0 of the buttons */
+    box-shadow: 15px 15px 20px var(--dark-shadow), 
+            -15px -15px 20px var(--light-shadow);
+    border: 0px;
+    background-color: var(--back);
+    border-radius: 20px;
 }
-.main_child:hover
-{
-    box-shadow: 0 30px 40px 0 rgba(0, 0, 0, 0.5);
-
-}
-.input_div input
-{
+.input_div input {
     width: 335px;
     height: 100px;
+    margin: 20px;
     font-size: 32px;
     text-align: right;
     font-weight: bold;
     padding: 0 6px;
     letter-spacing: 2px;
+    border: 0;
+    border-radius: 20px;
+    color: rgb(3, 104, 255);
+    background-color: var(--back);
+    box-shadow: inset 5px 5px 10px var(--dark-shadow),
+            inset -5px -5px 10px var(--light-shadow);
 }
-.but1
-{
-    width: 87px;
+.child1 {
+    display: flex;
+    margin: 10px;
+}
+.child1 button {
+    border: 0px;
+    box-shadow: 5px 5px 10px var(--dark-shadow), 
+    -5px -5px 10px var(--light-shadow);
+    border-radius: 20px;
+    margin: 7px;
+    font-size: large;
+}
+.child1 .but2 {
+    font-size: x-large;
+}
+.but1 {
+    width: 100%;
     height: 67px;
     font-weight: bold;
-    background-color: rgb(0, 0, 0);
-    color: seashell;
 }
-.but2
-{
-    width: 87px;
+.but2 {
+    width: 100%;
     height: 67px;
     font-weight: bold;
-    background-color:mediumblue;
-    color: seashell;
+}
+.toggleBtn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5) ;
+    cursor: pointer;
+}
+#equals {
+    background-color: chartreuse;
+}
 
+/* for dark theme */
+
+.dark {
+    background-color: var(--dark-back);
 }
-.but1:hover, .but2:hover
-{
-    background-color: mediumseagreen;
+.dark h1 {
+    color: rgb(23, 227, 227);
+}
+.dark .main_child {
+    background-color: #33393e;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.25), 
+            -15px -15px 20px rgba(255, 255, 255, 0.1);
+}
+.dark .input_div input {
+    color: #eee;
+    background-color: var(--back);
+    box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.5),
+            inset -5px -5px 10px var(--dark-shadow);
+}
+.dark .child1 button {
+    background-color: var(--dark-back);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), 
+    -5px -5px 10px rgba(255, 255, 255, 0.1);
+    color: #eee;
+}
+.dark .toggleBtn {
+    background-color: #eee;
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.4);
+}
+.dark #equals {
+    background-color: rgb(141, 142, 140);
 }
